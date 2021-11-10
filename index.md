@@ -1,3 +1,14 @@
+## s2c test tool gennerate xdc readme
+
+## wrgtclk
+### example: wrgtclk 1225 pre_name pos_name
+    you will get the output:
+```markdown
+    set_property PACKAGE_PIN AH9 [get_ports {pre_name_clkn_pos_name}]
+    set_property PACKAGE_PIN AH10 [get_ports {pre_name_clkp_pos_name}]
+```
+
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/timewh/helloworld/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
