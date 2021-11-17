@@ -2,7 +2,7 @@
 
 ## s2c test tool gennerate xdc readme
 
-## wrgtclk
+## (1) wrgtclk
 
 ```tcl
 example: wrgtclk 1225 pre_name pos_name   
@@ -18,7 +18,7 @@ you will get the output:
 wrgtck --- write gtclk xdc to g_fp![219:232] or[1219:1232]
 ```
 
-## wrgtlanes
+## (2) wrgtlanes
 
 ```tcl
 ex: wrgtlanes 224 pre_name?pos_name [0/1/2/3/20/21/30/31]    
@@ -54,24 +54,21 @@ wrgtlanes
 31:reverse of 31 , lane2 <-> lane3   
 ```
 
-## wrgrst
+## (3) wrgrst
 
 wrgrst [num] [netname]
  if num > 10  represent vuls440,else represent lx.
  --- write grstn xdc to g_fp![1:4]
 
-## wrnote
 
- --- write a line comment xdc to g_fp!if no comment or only a blank line.
-
-## wrgck
+## (4) wrgck
 
    wrgck [num] [pre_name] [pos_name]
    between the pre_name and pos_name is "p/n".
    start from 1,if the num > 100, represent the vuls440,else is lx.
 --- write gclk xdc to g_fp![1:12]
 
-## insert
+## (5) insert
 
  --- insert one dcard to jpos after they are loaded to g_fp!:
 pram1=connetor pram2=dcard |1-64
@@ -138,7 +135,7 @@ set_property IOSTANDARD LVCMOS18 [get_ports {SPI1_WP}]
 
 
 
-## DDR4 Match
+## (6) DDR4 Match
 
 ### (1) insert ddr4 card
 
@@ -223,10 +220,13 @@ rmatch 1 1 {c0_ddr4_cs_n[0]]} //DDR4_CS0_N  DDR0_CS0
 ![image](https://user-images.githubusercontent.com/35107934/142165287-513b582f-bf58-42d7-95ab-f7e8533285d2.png)
 
 
+## (7) wrnote
+
+ --- write a line comment xdc to g_fp!if no comment or only a blank line.
 
 
 
-## example
+## (8) example
 
 ![image](https://user-images.githubusercontent.com/35107934/142143964-90f7a9b4-f9f2-4204-adc7-468d52e595bc.png)
 
