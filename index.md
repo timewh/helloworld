@@ -29,9 +29,10 @@
     "?" represent 0,1,2,3    
     the "rxp" will autoly infer the "rxn" signal.
     
-    wrgtlanes --- write gtlanes xdc to g_fp!pram1: [219:232]=RX or[1219:1232]=TX    
-                 pram2:=netname_p(n is auto) 
-                 pram3=suffix [option or 0 1 2 3 =single lane]   
+    wrgtlanes     
+    --- write gtlanes xdc to g_fp!pram1: [219:232]=RX or[1219:1232]=TX    
+        pram2:=netname_p(n is auto) 
+        pram3=suffix [option or 0 1 2 3 =single lane]   
     20:lane0,lane1   
     21:lane2,lane3   
     30:reverse of 20 , lane0 <-> lane1   
@@ -109,6 +110,8 @@ set_property IOSTANDARD LVCMOS18 [get_ports {SPI1_WP}]
 #------------end----------------
 ```
 
+
+## example
 
 
 
