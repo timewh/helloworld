@@ -3,7 +3,7 @@
 ## wrgtclk
     example: wrgtclk 1225 pre_name pos_name   
     you will get the output:
-```
+```javascript
     set_property PACKAGE_PIN AH9 [get_ports {pre_name_clkn_pos_name}]
     set_property PACKAGE_PIN AH10 [get_ports {pre_name_clkp_pos_name}]
 ```    
@@ -63,7 +63,7 @@ param4：example “LVCMOS18”,used to define the voltage type!
         if not used can omit!    
 
 examp: we insert one card on VULS j8 :    
-```
+```javascript
 open gpim_h3.xdc
 jimpt gpim_h3.txt 1
 jimpt j8_ls.txt 2
@@ -71,7 +71,7 @@ insert 2 1 0 LVCOMS18
 close
 ```
 in the gpim_h3.txt :   
-```
+```javascript
 H14	SPI1_CS
 H11	SPI1_RESET
 G14	SPI1_SCK
@@ -80,7 +80,7 @@ G17	SPI1_SO
 H16	SPI1_WP
 ```
 int the j8_ls.txt ：   
-```
+```javascript
 C3	BP10	IO_L20N_T3L_N3_AD1N_60	Bank60
 C2	BP11	IO_L20P_T3L_N2_AD1P_60	Bank60
 C7	BL13	IO_L17N_T2U_N9_AD10N_60	Bank60
@@ -93,7 +93,7 @@ D1	BN9	IO_L21P_T3L_N4_AD8P_60	Bank60
 
 ```
 you will get the out file gpim_h3.xdc:
-```c
+```javascript
 #-----------------------------
 set_property PACKAGE_PIN BK25 [get_ports {SPI1_CS}]
 set_property IOSTANDARD LVCMOS18 [get_ports {SPI1_CS}]
