@@ -16,6 +16,8 @@ you will get the output:
 
 ```javascript
 wrgtck --- write gtclk xdc to g_fp![219:232] or[1219:1232]
+            219 - represent use gtrefclk0    
+           1219 - represent use gtrefclk1
 ```
 
 ## (2) wrgtlanes
@@ -65,9 +67,10 @@ wrgtlanes
 
 ```javascript
     param2: netname_p(n is auto) 
+    "?" represent 0,1,2,3 position.
     程式1 _p => _n  or _p_ => _n_
-    "?" represent 0,1,2,3    
-    the "rxp" will autoly infer the "rxn" signal.
+    程式2 xp_ => xn_ or xp[ => xn[ and add a ']' 
+    
     
     param3: suffix  or [option or 0 1 2 3 20 21 30 31 =single lane]   
             20:lane0,lane1   
