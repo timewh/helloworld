@@ -47,12 +47,13 @@
  --- write a line comment xdc to g_fp!if no comment or only a blank line.
 
 ## wrgck [num] [pre_name] [pos_name]
-   between the pre_name and pos_name is "p/n".
-   start from 1,if the num > 100, represent the vuls440,else is lx.
---- write gclk xdc to g_fp![1:12]
+   between the pre_name and pos_name is "p/n".    
+   start from 1,if the num > 100, represent the vuls440,else is lx.    
+--- write gclk xdc to g_fp![1:12]    
 
 ## insert
- --- insert one dcard to jpos after they are loaded to g_fp!:pram1=connetor pram2=dcard |1-64
+ --- insert one dcard to jpos after they are loaded to g_fp!:
+pram1=connetor pram2=dcard |1-64
 param3: if not use please give '0' or omit,
         if '1' ->represent debug mode,it will print the debug info.
         if '5' ->used to represent the merge mode to generate a new daught card info.normally for ddr4.
