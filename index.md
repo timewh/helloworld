@@ -22,31 +22,32 @@
     set_property PACKAGE_PIN AH1 [get_ports {pre_nmae3pos_name}]
     set_property PACKAGE_PIN AH2 [get_ports {pre_nmae3pos_name}]
     
-    224 is represent rx; 
-    1224 is represent tx;
-    2224 is represent reverse(pin loc 0123=>3210) rx;
-    3224 represent reverse(pin loc 0123=>3210) tx.
-    "?" represent 0,1,2,3
+     224 is represent rx;     
+    1224 is represent tx;   
+    2224 is represent reverse(pin loc 0123=>3210) rx;    
+    3224 represent reverse(pin loc 0123=>3210) tx.   
+    "?" represent 0,1,2,3    
     the "rxp" will autoly infer the "rxn" signal.
     
-    wrgtlanes --- write gtlanes xdc to g_fp!pram1: [219:232]=RX or[1219:1232]=TX
-                 pram2:=netname_p(n is auto) name3=suffix [option or 0 1 2 3 =single lane]
-    20:lane0,lane1
-    21:lane2,lane3
-    30:reverse of 20 , lane0 <-> lane1
-    31:reverse of 31 , lane2 <-> lane3
+    wrgtlanes --- write gtlanes xdc to g_fp!pram1: [219:232]=RX or[1219:1232]=TX    
+                 pram2:=netname_p(n is auto) name3=suffix [option or 0 1 2 3 =single lane]   
+    20:lane0,lane1   
+    21:lane2,lane3   
+    30:reverse of 20 , lane0 <-> lane1   
+    31:reverse of 31 , lane2 <-> lane3   
     
     ![image](https://user-images.githubusercontent.com/35107934/141075447-9ae2722d-f5cf-4ce0-81f7-646002c2bda6.png)
 
     
 ## wrgrst [num] [netname]
- if num > 10  represent vuls440,else represent lx.
+ if num > 10  represent vuls440,else represent lx.    
  --- write grstn xdc to g_fp![1:4]
  
 ## wrnote 
  --- write a line comment xdc to g_fp!if no comment or only a blank line.
 
-## wrgck [num] [pre_name] [pos_name]
+## wrgck
+   wrgck [num] [pre_name] [pos_name]    
    between the pre_name and pos_name is "p/n".    
    start from 1,if the num > 100, represent the vuls440,else is lx.    
 --- write gclk xdc to g_fp![1:12]    
@@ -57,7 +58,7 @@ pram1=connetor pram2=dcard |1-64
 param3: if not use please give '0' or omit,    
         if '1' ->represent debug mode,it will print the debug info.    
         if '5' ->used to represent the merge mode to generate a new daught card info.normally for ddr4.    
-param3：example “LVCMOS18”,used to define the voltage type!    
+param4：example “LVCMOS18”,used to define the voltage type!    
         if not used can omit!    
 
 examp: we insert one card on VULS j8 :    
