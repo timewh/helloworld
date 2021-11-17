@@ -136,6 +136,95 @@ set_property IOSTANDARD LVCMOS18 [get_ports {SPI1_WP}]
 #------------end----------------
 ```
 
+
+
+About DDR4 match:
+
+## (1) insert ddr4 card
+
+example:
+
+```tcl
+   open itcd.xdc
+   jimpt p-pm-ddr4.txt 1
+   jimpt j7_ls.txt 2
+   insert 2 1 5
+   close
+```
+
+
+
+  首先准备格式化txt文件：
+    1，连接器txt文件：格式要求：C11	BG15	IO_L6N_T0U_N11_AD6N_63	Bank63
+
+```
+       每一行都必须满足上面的格式，其中第一列是接插件位置索引，第二列位FPGA位置索引，
+       一般对应不同平台已经准备好了标准化的文件在s2c目录下
+```
+
+​    2，子卡txt文件：格式要求： C2 DDR4_DM4 
+
+```
+       每一行都必须满足上面的格式，
+       其中第一列是接插件位置索引，
+       第二列位net的具体名字含义会直接输出到xdc文件
+       其次可以导入的地址空间范围位1-64，执行insert命令时，第一个参数为connector,第二个为子卡，
+       第三个参数指定输出格式0-normal 1-debug 5-card and connector merge 
+       第四个参数为电平标准（LVCMOS18/），也可以不输入
+       最终输出的结果位于itcd.xdc文件中！
+```
+
+## (2) rmatxdc
+
+一般用于ddr4约束(使用之前必须对输入和查找之间做语义替换)：
+比如:(源addr4)=>(目的a4)，匹配的原则是按照
+
++ 单词匹配，并且被匹配的单词出现的次数越高则权重越高，同权重的匹配结果，则取最短的作为最佳输出
+
++ 数字可移位等价(语义替换的一种/c或n加数字的模式)：ck_c[0]/CKP0 => ckc0/ck0c/ck0_c/ck_0c/ck_c0 
+  语义替换的原则一般在目的匹配值为标准模板的情况下，将非统一输入向目的模板做语义匹配！
++ 增加关键字匹配权重
+  //dqs dm odt adr ck cke cs ba bg act reset dq
+
+```cpp
+param1: the daughtcard file
+param2: the target.xdc
+param3: the search index of key words in the target.xdc
+param4: the target index need to update in the target.xdc
+```
+
+```tcl
+rmatxdc ddr4.txt ddr4_example.xdc 5 3
+rmatxdc ddr4_j7ls.txt ddr4_example2.xdc 6 3
+rmatxdc itcd.xdc ddr4_example2.xdc 6 3
+```
+
+
+
+```
+jimpt ddr4.txt 1 
+//note: '1 1' of 'rmatch 1 1' is defualt value!do not care!
+//first 1: represent 1-64 mem buffer;
+//second 1: represent the search match index of the mem buffer.
+rmatch 1 1 "c0_ddr4_dq[1]" //   {c0_ddr4_dq[36]}]
+rmatch 1 1 {DDR0_ADDR[4]}]
+rmatch 1 1 {c0_ddr4_adr[4]]} 
+rmatch 1 1 {DDR0_BA[0]}]
+rmatch 1 1 DDR0_CKN0   
+rmatch 1 1 c0_ddr4_ck_c[0]    //=>DDR4_CK0_C DDR0_CKN0   //c0=0_c  // the positive edge of CK_t and negative edge of CK_c
+rmatch 1 1 {c0_ddr4_cke[0]]}  //DDR4_CKE0 DDR0_CKE0
+rmatch 1 1 {c0_ddr4_cs_n[0]]} //DDR4_CS0_N  DDR0_CS0
+//{DDR0_DM_P[0]} {c0_ddr4_dm_dbi_n[0]]}  ddr4_dm0
+//{DDR0_DQSP[0]}] {DDR0_DQSB[0]}]  "c0_ddr4_dqs_t[0]" "c0_ddr4_dqs_c[8]"  DDR4_DQS6_T
+```
+
+
+![image](https://user-images.githubusercontent.com/35107934/142165287-513b582f-bf58-42d7-95ab-f7e8533285d2.png)
+
+
+
+
+
 ## example
 
 ![image](https://user-images.githubusercontent.com/35107934/142143964-90f7a9b4-f9f2-4204-adc7-468d52e595bc.png)
