@@ -4,22 +4,28 @@
 
 ## wrgtclk
 
-    example: wrgtclk 1225 pre_name pos_name   
-    you will get the output:
+```tcl
+example: wrgtclk 1225 pre_name pos_name   
+you will get the output:
+```
 
-```javascript
+```tcl
     set_property PACKAGE_PIN AH9 [get_ports {pre_name_clkn_pos_name}]
     set_property PACKAGE_PIN AH10 [get_ports {pre_name_clkp_pos_name}]
 ```
 
-    wrgtck --- write gtclk xdc to g_fp![219:232] or[1219:1232]
+```tcl
+wrgtck --- write gtclk xdc to g_fp![219:232] or[1219:1232]
+```
 
 ## wrgtlanes
 
-    ex: wrgtlanes 224 pre_name?pos_name [0/1/2/3/20/21/30/31]    
-    you will get the output:
+```tcl
+ex: wrgtlanes 224 pre_name?pos_name [0/1/2/3/20/21/30/31]    
+you will get the output:
+```
 
-```javascript
+```tcl
     set_property PACKAGE_PIN AL3 [get_ports {pre_nmae0pos_name}]
     set_property PACKAGE_PIN AL4 [get_ports {pre_nmae0pos_name}]
     set_property PACKAGE_PIN AK1 [get_ports {pre_nmae1pos_name}]
@@ -30,21 +36,23 @@
     set_property PACKAGE_PIN AH2 [get_ports {pre_nmae3pos_name}]
 ```
 
-     224 is represent rx;     
-    1224 is represent tx;   
-    2224 is represent reverse(pin loc 0123=>3210) rx;    
-    3224 represent reverse(pin loc 0123=>3210) tx.   
-    "?" represent 0,1,2,3    
-    the "rxp" will autoly infer the "rxn" signal.
-    
-    wrgtlanes     
-    --- write gtlanes xdc to g_fp!pram1: [219:232]=RX or[1219:1232]=TX    
-        pram2:=netname_p(n is auto) 
-        pram3=suffix [option or 0 1 2 3 =single lane]   
-    20:lane0,lane1   
-    21:lane2,lane3   
-    30:reverse of 20 , lane0 <-> lane1   
-    31:reverse of 31 , lane2 <-> lane3   
+```tcl
+ 224 is represent rx;     
+1224 is represent tx;   
+2224 is represent reverse(pin loc 0123=>3210) rx;    
+3224 represent reverse(pin loc 0123=>3210) tx.   
+"?" represent 0,1,2,3    
+the "rxp" will autoly infer the "rxn" signal.
+
+wrgtlanes     
+--- write gtlanes xdc to g_fp!pram1: [219:232]=RX or[1219:1232]=TX    
+    pram2:=netname_p(n is auto) 
+    pram3=suffix [option or 0 1 2 3 =single lane]   
+20:lane0,lane1   
+21:lane2,lane3   
+30:reverse of 20 , lane0 <-> lane1   
+31:reverse of 31 , lane2 <-> lane3   
+```
 
 ## wrgrst
 
@@ -111,7 +119,7 @@ D1 BN9 IO_L21P_T3L_N4_AD8P_60 Bank60
 
 you will get the out file gpim_h3.xdc:
 
-```javascript
+```tcl
 #-----------------------------
 set_property PACKAGE_PIN BK25 [get_ports {SPI1_CS}]
 set_property IOSTANDARD LVCMOS18 [get_ports {SPI1_CS}]
