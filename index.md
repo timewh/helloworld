@@ -267,4 +267,6 @@ rmatch 1 1 {c0_ddr4_cs_n[0]]} //DDR4_CS0_N  DDR0_CS0
 
 ## Welcome to GitHub Pages
 
+[next page](https://timewh.github.io/helloworld/genlinkxdc_bash)
+
 [My Blog](https://www.cnblogs.com/time93/)
