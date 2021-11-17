@@ -145,7 +145,7 @@ D1 BN9 IO_L21P_T3L_N4_AD8P_60 Bank60
 
 you will get the out file gpim_h3.xdc:
 
-```tcl
+```javascript
 #-----------------------------
 set_property PACKAGE_PIN BK25 [get_ports {SPI1_CS}]
 set_property IOSTANDARD LVCMOS18 [get_ports {SPI1_CS}]
@@ -170,7 +170,7 @@ set_property IOSTANDARD LVCMOS18 [get_ports {SPI1_WP}]
 
 example:
 
-```tcl
+```javascript
    open itcd.xdc
    jimpt p-pm-ddr4.txt 1
    jimpt j7_ls.txt 2
@@ -212,14 +212,14 @@ example:
 + 增加关键字匹配权重
   //dqs dm odt adr ck cke cs ba bg act reset dq
 
-```cpp
+```javascript
 param1: the daughtcard file
 param2: the target.xdc
 param3: the search index of key words in the target.xdc
 param4: the target index need to update in the target.xdc
 ```
 
-```tcl
+```javascript
 rmatxdc ddr4.txt ddr4_example.xdc 5 3
 rmatxdc ddr4_j7ls.txt ddr4_example2.xdc 6 3
 rmatxdc itcd.xdc ddr4_example2.xdc 6 3
@@ -227,7 +227,7 @@ rmatxdc itcd.xdc ddr4_example2.xdc 6 3
 
 
 ### (3) rmatch
-```
+```javascript
 jimpt ddr4.txt 1 
 //note: '1 1' of 'rmatch 1 1' is defualt value!do not care!
 //first 1: represent 1-64 mem buffer;
@@ -251,7 +251,7 @@ rmatch 1 1 {c0_ddr4_cs_n[0]]} //DDR4_CS0_N  DDR0_CS0
 
 ## (7) wrnote
 
- --- write a line comment xdc to g_fp!if no comment or only a blank line.
+ --- write a line comment xdc to g_fp!if no comment or only a blank line.    
 
 
 
