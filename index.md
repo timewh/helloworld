@@ -52,15 +52,15 @@
 --- write gclk xdc to g_fp![1:12]    
 
 ## insert
- --- insert one dcard to jpos after they are loaded to g_fp!:
-pram1=connetor pram2=dcard |1-64
-param3: if not use please give '0' or omit,
-        if '1' ->represent debug mode,it will print the debug info.
-        if '5' ->used to represent the merge mode to generate a new daught card info.normally for ddr4.
-param3：example “LVCMOS18”,used to define the voltage type!
-        if not used can omit!
+ --- insert one dcard to jpos after they are loaded to g_fp!:    
+pram1=connetor pram2=dcard |1-64    
+param3: if not use please give '0' or omit,    
+        if '1' ->represent debug mode,it will print the debug info.    
+        if '5' ->used to represent the merge mode to generate a new daught card info.normally for ddr4.    
+param3：example “LVCMOS18”,used to define the voltage type!    
+        if not used can omit!    
 
-examp: we insert one card on VULS j8 :
+examp: we insert one card on VULS j8 :    
 ```
 open gpim_h3.xdc
 jimpt gpim_h3.txt 1
@@ -68,7 +68,7 @@ jimpt j8_ls.txt 2
 insert 2 1 0 LVCOMS18
 close
 ```
-in the gpim_h3.txt :
+in the gpim_h3.txt :   
 ```
 H14	SPI1_CS
 H11	SPI1_RESET
@@ -77,7 +77,7 @@ H13	SPI1_SI
 G17	SPI1_SO
 H16	SPI1_WP
 ```
-int the j8_ls.txt ：
+int the j8_ls.txt ：   
 ```
 C3	BP10	IO_L20N_T3L_N3_AD1N_60	Bank60
 C2	BP11	IO_L20P_T3L_N2_AD1P_60	Bank60
