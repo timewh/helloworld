@@ -116,6 +116,7 @@ set_property IOSTANDARD LVCMOS18 [get_ports {SPI1_WP}]
 
 
 
+![image](https://user-images.githubusercontent.com/35107934/142143964-90f7a9b4-f9f2-4204-adc7-468d52e595bc.png)
 
 
 
