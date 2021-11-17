@@ -10,7 +10,7 @@
     wrgtck --- write gtclk xdc to g_fp![219:232] or[1219:1232]
 
 ## wrgtlanes
-### ex: wrgtlanes 224 pre_name?pos_name
+### ex: wrgtlanes 224 pre_name?pos_name [0/1/2/3/20/21]
     you will get the output:
     
     set_property PACKAGE_PIN AL3 [get_ports {pre_nmae0pos_name}]
@@ -22,13 +22,16 @@
     set_property PACKAGE_PIN AH1 [get_ports {pre_nmae3pos_name}]
     set_property PACKAGE_PIN AH2 [get_ports {pre_nmae3pos_name}]
     
-    224 is represent rx; 1224 is represent tx;2224 is represent inverse rx;3224 represent reverse tx.
+    224 is represent rx; 1224 is represent tx;2224 is represent reverse(pin loc 0123=>3210) rx;3224 represent reverse(pin loc 0123=>3210) tx.
     "?" represent 0,1,2,3
     the "rxp" will autoly infer the "rxn" signal.
     
     wrgtlanes --- write gtlanes xdc to g_fp!pram1: [219:232]=RX or[1219:1232]=TX
                  pram2:=netname_p(n is auto) name3=suffix [option or 0 1 2 3 =single lane]
-    
+    20:lane0,lane1
+    21:lane2,lane3
+    30:reverse of 20 , lane0 <-> lane1
+    31:reverse of 31 , lane2 <-> lane3
     
     ![image](https://user-images.githubusercontent.com/35107934/141075447-9ae2722d-f5cf-4ce0-81f7-646002c2bda6.png)
 
