@@ -154,7 +154,7 @@ example:
 
 
 
-  首先准备格式化txt文件：
+  首先准备格式化txt文件：    
     1，连接器txt文件：格式要求：C11	BG15	IO_L6N_T0U_N11_AD6N_63	Bank63
 
 ```
@@ -200,7 +200,7 @@ rmatxdc itcd.xdc ddr4_example2.xdc 6 3
 ```
 
 
-
+## (3) rmatch
 ```
 jimpt ddr4.txt 1 
 //note: '1 1' of 'rmatch 1 1' is defualt value!do not care!
@@ -211,11 +211,12 @@ rmatch 1 1 {DDR0_ADDR[4]}]
 rmatch 1 1 {c0_ddr4_adr[4]]} 
 rmatch 1 1 {DDR0_BA[0]}]
 rmatch 1 1 DDR0_CKN0   
-rmatch 1 1 c0_ddr4_ck_c[0]    //=>DDR4_CK0_C DDR0_CKN0   //c0=0_c  // the positive edge of CK_t and negative edge of CK_c
+rmatch 1 1 c0_ddr4_ck_c[0]    //=>DDR4_CK0_C DDR0_CKN0   
+//c0=0_c  // the positive edge of CK_t and negative edge of CK_c
 rmatch 1 1 {c0_ddr4_cke[0]]}  //DDR4_CKE0 DDR0_CKE0
 rmatch 1 1 {c0_ddr4_cs_n[0]]} //DDR4_CS0_N  DDR0_CS0
 //{DDR0_DM_P[0]} {c0_ddr4_dm_dbi_n[0]]}  ddr4_dm0
-//{DDR0_DQSP[0]}] {DDR0_DQSB[0]}]  "c0_ddr4_dqs_t[0]" "c0_ddr4_dqs_c[8]"  DDR4_DQS6_T
+//{DDR0_DQSP[0]}] {DDR0_DQSB[0]}] "c0_ddr4_dqs_t[0]" "c0_ddr4_dqs_c[8]"  DDR4_DQS6_T
 ```
 
 
