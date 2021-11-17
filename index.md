@@ -4,28 +4,28 @@
 
 ## (1) wrgtclk
 
-```tcl
+```javascript
 example: wrgtclk 1225 pre_name pos_name   
 you will get the output:
 ```
 
-```tcl
+```javascript
     set_property PACKAGE_PIN AH9 [get_ports {pre_name_clkn_pos_name}]
     set_property PACKAGE_PIN AH10 [get_ports {pre_name_clkp_pos_name}]
 ```
 
-```tcl
+```javascript
 wrgtck --- write gtclk xdc to g_fp![219:232] or[1219:1232]
 ```
 
 ## (2) wrgtlanes
 
-```tcl
+```javascript
 ex: wrgtlanes 224 pre_name?pos_name [0/1/2/3/20/21/30/31]    
 you will get the output:
 ```
 
-```tcl
+```javascript
     set_property PACKAGE_PIN AL3 [get_ports {pre_nmae0pos_name}]
     set_property PACKAGE_PIN AL4 [get_ports {pre_nmae0pos_name}]
     set_property PACKAGE_PIN AK1 [get_ports {pre_nmae1pos_name}]
@@ -36,10 +36,7 @@ you will get the output:
     set_property PACKAGE_PIN AH2 [get_ports {pre_nmae3pos_name}]
 ```
 
-```tcl
-
-
-
+```javascript
 wrgtlanes     
 --- write gtlanes xdc to g_fp!    
     param1: [219:232]=RX or[1219:1232]=TX
