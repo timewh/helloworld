@@ -49,22 +49,22 @@ wrgtlanes
             3224 represent reverse(pin loc 0123=>3210) tx.   
             you can also use the name:
  ```           
-> char ls_jarray_map[][10]={"J4","J3","J2","J1+J8","JX2-M1","JX2-M2","JX1-M1","JX1-M2","MDM","J7","J6","J5"};
-> //the above map is 11->0:232->219
-> unsigned int vuquad[12]={232,231,230,229,227,226,225,224,222,221,220,219};
+> char ls_jarray_map[][10]={"J4","J3","J2","J1+J8","JX2-M1","JX2-M2","JX1-M1","JX1-M2","MDM","J7","J6","J5"};    
+> //the above map is 11->0:232->219    
+> unsigned int vuquad[12]={232,231,230,229,227,226,225,224,222,221,220,219};   
 ```javascript           
             when use the name 'J?' , you need to add another param more ,like : T/T!/R/R!
 ```             
-> t1 =jname2quad(ObName1);
-> //this place need to add another param more! [RX/TX/!(PM_MSAS)]
-> t = t + InStrSingGet(OperateS+t,ObName1);
-> if(ObName1[0] == 'T')  t1+=1000;
-> //when orient the PM_MSAS card we need and the '!' param!
-> if(strseek(ObName1,'!',4))
->   {
->       easy_xdc_namespc::printf("RV is used in this QUAD!\n");
->       t1+=2000;
->   }
+> t1 =jname2quad(ObName1);    
+> //this place need to add another param more! [RX/TX/!(PM_MSAS)]   
+> t = t + InStrSingGet(OperateS+t,ObName1);   
+> if(ObName1[0] == 'T')  t1+=1000;   
+> //when orient the PM_MSAS card we need and the '!' param!    
+> if(strseek(ObName1,'!',4))   
+>   {   
+>       easy_xdc_namespc::printf("RV is used in this QUAD!\n");   
+>       t1+=2000;   
+>   }   
 
 ```javascript
     param2: netname_p(n is auto) 
