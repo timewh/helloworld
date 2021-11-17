@@ -3,16 +3,16 @@
 ## wrgtclk
 ### example: wrgtclk 1225 pre_name pos_name
     you will get the output:
-
+```
     set_property PACKAGE_PIN AH9 [get_ports {pre_name_clkn_pos_name}]
     set_property PACKAGE_PIN AH10 [get_ports {pre_name_clkp_pos_name}]
-    
+```    
     wrgtck --- write gtclk xdc to g_fp![219:232] or[1219:1232]
 
 ## wrgtlanes
-### ex: wrgtlanes 224 pre_name?pos_name [0/1/2/3/20/21]
+### ex: wrgtlanes 224 pre_name?pos_name [0/1/2/3/20/21/30/31]
     you will get the output:
-    
+```    
     set_property PACKAGE_PIN AL3 [get_ports {pre_nmae0pos_name}]
     set_property PACKAGE_PIN AL4 [get_ports {pre_nmae0pos_name}]
     set_property PACKAGE_PIN AK1 [get_ports {pre_nmae1pos_name}]
@@ -21,7 +21,7 @@
     set_property PACKAGE_PIN AJ4 [get_ports {pre_nmae2pos_name}]
     set_property PACKAGE_PIN AH1 [get_ports {pre_nmae3pos_name}]
     set_property PACKAGE_PIN AH2 [get_ports {pre_nmae3pos_name}]
-    
+```   
      224 is represent rx;     
     1224 is represent tx;   
     2224 is represent reverse(pin loc 0123=>3210) rx;    
@@ -39,7 +39,8 @@
     ![image](https://user-images.githubusercontent.com/35107934/141075447-9ae2722d-f5cf-4ce0-81f7-646002c2bda6.png)
 
     
-## wrgrst [num] [netname]
+## wrgrst 
+wrgrst [num] [netname]    
  if num > 10  represent vuls440,else represent lx.    
  --- write grstn xdc to g_fp![1:4]
  
