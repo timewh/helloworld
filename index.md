@@ -81,18 +81,22 @@ wrgtlanes
 
 ## (3) wrgrst
 
-wrgrst [num] [netname]
- if num > 10  represent vuls440,else represent lx.
- --- write grstn xdc to g_fp![1:4]
+```javascript
+ wrgrst [num] [netname]      
+ write grstn xdc to g_fp![1:4]     
+ if num > 10  represent vuls440,else represent lx.      
+```    
 
 
 ## (4) wrgck
 
-   wrgck [num] [pre_name] [pos_name]
-   between the pre_name and pos_name is "p/n".
-   start from 1,if the num > 100, represent the vuls440,else is lx.
---- write gclk xdc to g_fp![1:12]
-
+```javascript
+   wrgck [num] [pre_name] [pos_name]       
+   write gclk xdc to g_fp![1:12]        
+   between the pre_name and pos_name is "p/n".    
+   start from 1,if the num > 100, represent the vuls440,else is lx.    
+``` 
+ 
 ## (5) insert
 
  --- insert one dcard to jpos after they are loaded to g_fp!:
