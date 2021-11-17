@@ -12,7 +12,7 @@
 ## wrgtlanes
     ex: wrgtlanes 224 pre_name?pos_name [0/1/2/3/20/21/30/31]    
     you will get the output:
-```    
+```javascript    
     set_property PACKAGE_PIN AL3 [get_ports {pre_nmae0pos_name}]
     set_property PACKAGE_PIN AL4 [get_ports {pre_nmae0pos_name}]
     set_property PACKAGE_PIN AK1 [get_ports {pre_nmae1pos_name}]
@@ -93,7 +93,7 @@ D1	BN9	IO_L21P_T3L_N4_AD8P_60	Bank60
 
 ```
 you will get the out file gpim_h3.xdc:
-```
+```c
 #-----------------------------
 set_property PACKAGE_PIN BK25 [get_ports {SPI1_CS}]
 set_property IOSTANDARD LVCMOS18 [get_ports {SPI1_CS}]
