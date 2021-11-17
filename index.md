@@ -84,7 +84,7 @@ wrgtlanes
 ```javascript
  wrgrst [num] [netname]      
  write grstn xdc to g_fp![1:4]     
- if num > 10  represent vuls440,else represent lx.      
+ if num start from  11  represent vuls440,else represent lx.      
 ```    
 
 
@@ -94,7 +94,7 @@ wrgtlanes
    wrgck [num] [pre_name] [pos_name]       
    write gclk xdc to g_fp![1:12]        
    between the pre_name and pos_name is "p/n".    
-   start from 1,if the num > 100, represent the vuls440,else is lx.    
+   start from 1,if the num start from 101, represent the vuls440,else is lx.    
 ``` 
  
 ## (5) insert
