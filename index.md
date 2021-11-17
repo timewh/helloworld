@@ -99,6 +99,8 @@ wrgtlanes
  
 ## (5) insert
 
+
+```javascript
  --- insert one dcard to jpos after they are loaded to g_fp!:
 pram1=connetor pram2=dcard |1-64
 param3: if not use please give '0' or omit,
@@ -106,6 +108,7 @@ param3: if not use please give '0' or omit,
         if '5' ->used to represent the merge mode to generate a new daught card info.normally for ddr4.
 param4：example “LVCMOS18”,used to define the voltage type!
         if not used can omit!
+```
 
 examp: we insert one card on VULS j8 :
 
@@ -166,7 +169,7 @@ set_property IOSTANDARD LVCMOS18 [get_ports {SPI1_WP}]
 
 ## (6) DDR4 Match
 
-### (1) insert ddr4 card
+### (a) insert ddr4 card
 
 example:
 
@@ -200,7 +203,7 @@ example:
        最终输出的结果位于itcd.xdc文件中！
 ```
 
-### (2) rmatxdc
+### (b) rmatxdc
 
 一般用于ddr4约束(使用之前必须对输入和查找之间做语义替换)：
 比如:(源addr4)=>(目的a4)，匹配的原则是按照
@@ -226,7 +229,7 @@ rmatxdc itcd.xdc ddr4_example2.xdc 6 3
 ```
 
 
-### (3) rmatch
+### (c) rmatch
 ```javascript
 jimpt ddr4.txt 1 
 //note: '1 1' of 'rmatch 1 1' is defualt value!do not care!
