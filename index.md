@@ -138,9 +138,9 @@ set_property IOSTANDARD LVCMOS18 [get_ports {SPI1_WP}]
 
 
 
-About DDR4 match:
+## DDR4 Match
 
-## (1) insert ddr4 card
+### (1) insert ddr4 card
 
 example:
 
@@ -174,7 +174,7 @@ example:
        最终输出的结果位于itcd.xdc文件中！
 ```
 
-## (2) rmatxdc
+### (2) rmatxdc
 
 一般用于ddr4约束(使用之前必须对输入和查找之间做语义替换)：
 比如:(源addr4)=>(目的a4)，匹配的原则是按照
@@ -200,7 +200,7 @@ rmatxdc itcd.xdc ddr4_example2.xdc 6 3
 ```
 
 
-## (3) rmatch
+### (3) rmatch
 ```
 jimpt ddr4.txt 1 
 //note: '1 1' of 'rmatch 1 1' is defualt value!do not care!
