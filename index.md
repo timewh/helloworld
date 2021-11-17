@@ -2,6 +2,7 @@
 
 ## wrgtclk
 ### example: wrgtclk 1225 pre_name pos_name
+
     you will get the output:
 ```
     set_property PACKAGE_PIN AH9 [get_ports {pre_name_clkn_pos_name}]
@@ -11,6 +12,7 @@
 
 ## wrgtlanes
 ### ex: wrgtlanes 224 pre_name?pos_name [0/1/2/3/20/21/30/31]
+
     you will get the output:
 ```    
     set_property PACKAGE_PIN AL3 [get_ports {pre_nmae0pos_name}]
