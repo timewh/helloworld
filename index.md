@@ -36,7 +36,8 @@
     30:reverse of 20 , lane0 <-> lane1   
     31:reverse of 31 , lane2 <-> lane3   
     
-    ![image](https://user-images.githubusercontent.com/35107934/141075447-9ae2722d-f5cf-4ce0-81f7-646002c2bda6.png)
+
+![image](https://user-images.githubusercontent.com/35107934/141075447-9ae2722d-f5cf-4ce0-81f7-646002c2bda6.png)
 
     
 ## wrgrst 
