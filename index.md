@@ -254,7 +254,8 @@ rmatch 1 1 {c0_ddr4_cs_n[0]]} //DDR4_CS0_N  DDR0_CS0
 
 ## (7) wrnote
 
- --- write a line comment xdc to g_fp!if no comment or only a blank line.    
+ write a line comment xdc to g_fp!    
+ if no comment or only a blank line.        
 
 
 
