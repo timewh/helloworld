@@ -22,7 +22,10 @@
     set_property PACKAGE_PIN AH1 [get_ports {pre_nmae3pos_name}]
     set_property PACKAGE_PIN AH2 [get_ports {pre_nmae3pos_name}]
     
-    224 is represent rx; 1224 is represent tx;2224 is represent reverse(pin loc 0123=>3210) rx;3224 represent reverse(pin loc 0123=>3210) tx.
+    224 is represent rx; 
+    1224 is represent tx;
+    2224 is represent reverse(pin loc 0123=>3210) rx;
+    3224 represent reverse(pin loc 0123=>3210) tx.
     "?" represent 0,1,2,3
     the "rxp" will autoly infer the "rxn" signal.
     
@@ -62,18 +65,48 @@ open gpim_h3.xdc
 jimpt gpim_h3.txt 1
 jimpt j8_ls.txt 2
 help
-insert 2 1
+insert 2 1 0 LVCOMS18
 close
 ```
 in the gpim_h3.txt :
 ```
-
+H14	SPI1_CS
+H11	SPI1_RESET
+G14	SPI1_SCK
+H13	SPI1_SI
+G17	SPI1_SO
+H16	SPI1_WP
 ```
 int the j8_ls.txt ：
+```
+C3	BP10	IO_L20N_T3L_N3_AD1N_60	Bank60
+C2	BP11	IO_L20P_T3L_N2_AD1P_60	Bank60
+C7	BL13	IO_L17N_T2U_N9_AD10N_60	Bank60
+C6	BK13	IO_L17P_T2U_N8_AD10P_60	Bank60
+C11	BP20	IO_L2N_T0L_N3_60	Bank60
+C10	BP21	IO_L2P_T0L_N2_60	Bank60
+D2	BP9	IO_L21N_T3L_N5_AD8N_60	Bank60
+D1	BN9	IO_L21P_T3L_N4_AD8P_60	Bank60
+...
 
-
+```
 you will get the out file gpim_h3.xdc:
-
+```
+#-----------------------------
+set_property PACKAGE_PIN BK25 [get_ports {SPI1_CS}]
+set_property IOSTANDARD LVCMOS18 [get_ports {SPI1_CS}]
+set_property PACKAGE_PIN BL23 [get_ports {SPI1_RESET}]
+set_property IOSTANDARD LVCMOS18 [get_ports {SPI1_RESET}]
+set_property PACKAGE_PIN BK27 [get_ports {SPI1_SCK}]
+set_property IOSTANDARD LVCMOS18 [get_ports {SPI1_SCK}]
+set_property PACKAGE_PIN BK26 [get_ports {SPI1_SI}]
+set_property IOSTANDARD LVCMOS18 [get_ports {SPI1_SI}]
+set_property PACKAGE_PIN BP29 [get_ports {SPI1_SO}]
+set_property IOSTANDARD LVCMOS18 [get_ports {SPI1_SO}]
+set_property PACKAGE_PIN BM29 [get_ports {SPI1_WP}]
+set_property IOSTANDARD LVCMOS18 [get_ports {SPI1_WP}]
+#------------end----------------
+```
 
 
 
