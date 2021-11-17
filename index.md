@@ -120,4 +120,7 @@ set_property IOSTANDARD LVCMOS18 [get_ports {SPI1_WP}]
 
 
 ## Welcome to GitHub Pages
+[My Blog](https://www.cnblogs.com/time93/)
+
+
 
