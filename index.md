@@ -37,21 +37,43 @@ you will get the output:
 ```
 
 ```tcl
- 224 is represent rx;     
-1224 is represent tx;   
-2224 is represent reverse(pin loc 0123=>3210) rx;    
-3224 represent reverse(pin loc 0123=>3210) tx.   
+
 "?" represent 0,1,2,3    
 the "rxp" will autoly infer the "rxn" signal.
 
 wrgtlanes     
---- write gtlanes xdc to g_fp!pram1: [219:232]=RX or[1219:1232]=TX    
-    pram2:=netname_p(n is auto) 
-    pram3=suffix [option or 0 1 2 3 =single lane]   
-20:lane0,lane1   
-21:lane2,lane3   
-30:reverse of 20 , lane0 <-> lane1   
-31:reverse of 31 , lane2 <-> lane3   
+--- write gtlanes xdc to g_fp!    
+    param1: [219:232]=RX or[1219:1232]=TX
+            224 is represent rx;     
+            1224 is represent tx;   
+            2224 is represent reverse(pin loc 0123=>3210) rx;    
+            3224 represent reverse(pin loc 0123=>3210) tx.   
+            you can also use the name:
+            > char ls_jarray_map[][10]={"J4","J3","J2","J1+J8","JX2-M1","JX2-M2","JX1-M1","JX1-M2","MDM","J7","J6","J5"};
+            > //the above map is 11->0:232->219
+            > unsigned int vuquad[12]={232,231,230,229,227,226,225,224,222,221,220,219};
+            
+            when use the name 'J?' , you need to add another param more ,like : T/T!/R/R!
+            
+            > t1 =jname2quad(ObName1);
+            > //this place need to add another param more! [RX/TX/!(PM_MSAS)]
+            > t = t + InStrSingGet(OperateS+t,ObName1);
+            > if(ObName1[0] == 'T')  t1+=1000;
+            > //when orient the PM_MSAS card we need and the '!' param!
+            > if(strseek(ObName1,'!',4))
+            >   {
+            >       easy_xdc_namespc::printf("RV is used in this QUAD!\n");
+            >       t1+=2000;
+            >   }
+            
+    param2: netname_p(n is auto) 
+    程式1 _p => _n  or _p_ => _n_
+    
+    param3: suffix  or [option or 0 1 2 3 20 21 30 31 =single lane]   
+            20:lane0,lane1   
+            21:lane2,lane3   
+            30:reverse of 20 , lane0 <-> lane1   
+            31:reverse of 31 , lane2 <-> lane3   
 ```
 
 ## (3) wrgrst
