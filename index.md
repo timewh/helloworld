@@ -48,6 +48,39 @@
    start from 1,if the num > 100, represent the vuls440,else is lx.
 --- write gclk xdc to g_fp![1:12]
 
+##insert
+insert one dcard to jpos after they are loaded to g_fp!:pram1=connetor pram2=dcard |1-64
+param3: if not use please give '0' or omit,
+        if '1' ->represent debug mode,it will print the debug info.
+        if '5' ->used to represent the merge mode to generate a new daught card info.normally for ddr4.
+param3：example “LVCMOS18”,used to define the voltage type!
+        if not used can omit!
+
+examp: we insert one card on VULS j8 :
+```
+open gpim_h3.xdc
+jimpt gpim_h3.txt 1
+jimpt j8_ls.txt 2
+help
+insert 2 1
+close
+```
+in the gpim_h3.txt :
+```
+
+```
+int the j8_ls.txt ：
+
+
+you will get the out file gpim_h3.xdc:
+
+
+
+
+
+
+
+
 
 
 
