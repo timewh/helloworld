@@ -222,6 +222,8 @@ param3: the search index of key words in the target.xdc
 param4: the target index need to update in the target.xdc
 ```
 
+after the cmd run , it will gennerate a same name file of param2,int the output dir!    
+
 ```javascript
 rmatxdc ddr4.txt ddr4_example.xdc 5 3
 rmatxdc ddr4_j7ls.txt ddr4_example2.xdc 6 3
