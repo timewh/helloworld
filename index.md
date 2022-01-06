@@ -90,6 +90,8 @@ wrgtlanes
  wrgrst [num] [netname]      
  write grstn xdc to g_fp![1:4]     
  if num start from  11  represent vuls440,else represent lx.      
+  because we already set the program default to vu quad ls，
+so do not need the info to ref ls or lx platform.
 ```    
 
 
@@ -100,6 +102,8 @@ wrgtlanes
    write gclk xdc to g_fp![1:12]        
    between the pre_name and pos_name is "p/n".    
    start from 1,if the num start from 101, represent the vuls440,else is lx.    
+   because we already set the program default to vu quad ls，
+so do not need the info to ref ls or lx platform.
 ``` 
  
 ## (5) insert
@@ -108,11 +112,16 @@ wrgtlanes
 ```javascript
  --- insert one dcard to jpos after they are loaded to g_fp!:
 pram1=connetor pram2=dcard |1-64
+in the program we use two different mem space to save
+these data,so these param can be same, is ok.
 param3: if not use please give '0' or omit,
         if '1' ->represent debug mode,it will print the debug info.
         if '5' ->used to represent the merge mode to generate a new daught card info.normally for ddr4.
 param4：example “LVCMOS18”,used to define the voltage type!
         if not used can omit!
+        you known,the pinvol info is moved to d card file.
+if we want to set the voltage info,we only need give this 
+param a non-zero value.
 ```
 
 examp: we insert one card on VULS j8 :
@@ -120,8 +129,12 @@ examp: we insert one card on VULS j8 :
 ```javascript
 open gpim_h3.xdc
 jimpt gpim_h3.txt 1
+//change the jimpt to cimpt because jimpt just used for
+j connectors,it will resort to jmap info.
 jimpt j8_ls.txt 2
 insert 2 1 0 LVCOMS18
+//can change to:insert 2 1 0 1
+//LVCMOS18 just used as a non-zero value.
 close
 ```
 
