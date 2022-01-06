@@ -18,6 +18,11 @@ you will get the output:
 wrgtck --- write gtclk xdc to g_fp![219:232] or[1219:1232]
             219 - represent use gtrefclk0    
            1219 - represent use gtrefclk1
+when the program initially run, it will load the gtclk info，autoly.
+default it load the ref0，and then the ref1 is cannot be
+accessed.you can access the ref1,only after you reload the gtclk info
+from ref1.so we do not need to refer 0 or 1,just tell it the
+gt pos.
 ```
 
 ## (2) wrgtlanes
